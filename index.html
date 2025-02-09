@@ -37,9 +37,9 @@
 						</div>
 						<div class="content">
 							<div class="inner">								
-								<p><strong>Repetitive tasks are a thing of the past. AI has changed the game.</strong></p>
+								<p><strong>Tired of writing the same emails or doing the same repetitive tasks over and over?</strong></p>
 								<h1><img src="images/H1.png"></h1>
-								<p><strong>Ask me for creative solutions and personalised guidance.</strong></p>
+								<p><strong>Get personalised recommendations to achieve your goals.</strong></p>
 							</div>
 						</div>
 						<nav>
@@ -58,31 +58,92 @@
 
 						<!-- Intro -->
 							<article id="intro">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/Intro (1).png" alt="" /></span>
-								<h4>What I do:</h4>
+								<h2 class="major">What I Offer</h2>
+								<span class="image main"><img src="images/Intro (1).png" alt="Cick me" /></span>
 								<p><strong>SEO</strong></p>
 								<p><strong>Web Design</strong></p>
 								<p><strong>Web Application Development</strong></p>
-								<p><strong>Web Hosting</strong> (parking, transfer and reservations)</p>
+								<p><strong>Web Hosting</strong> (transfer and name reservations)</p>
 								<p><strong>Form Creation</strong> (application or chat design, logic testing and deployment)</p>
 								<p>Explore my <a href="#work"> work </a>ranging from pro bono projects (for NPOs) to paid service solutions.</p>
 							</article>
 
 						<!-- Work -->
 							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/online_ad.jpg" /></span>
+								<h2 class="major">Web Design</h2>
+
+								<span class="image main">
+									<img src="images/online_ad.jpg" id="adImage" style="cursor: pointer;" />
+								  </span>
+								  
+								  <a href="#work1" style="text-decoration: underline;"><p>Read more</p></a>
+							
+								  <div id="modalContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001;"> <--- Container for modal and overlay
+									<div id="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);"></div>
+								
+								  <div id="videoModal" style="display: none; position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%);">
+									<video id="adVideo" width="640" height="360" controls>
+									  <source src="video/gen_video.mp4" type="video/mp4">
+									  Your browser does not support the video tag.
+									</video>
+									<button id="closeButton" style="position: absolute; top: 10px; right: 10px;">Close</button>
+								  </div>
+								  
+								  <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */ backdrop-filter: blur(5px);"></div> <--- Overlay for blur
+
+<script>
+  const adImage = document.getElementById('adImage');
+  const videoModal = document.getElementById('videoModal');
+  const adVideo = document.getElementById('adVideo');
+  const closeButton = document.getElementById('closeButton');
+  const overlay = document.getElementById('overlay'); // Get overlay 
+  const modalContainer = document.getElementById('modalContainer'); // Get the container
+
+  adImage.addEventListener('click', () => {
+    modalContainer.style.display = 'block'; // Show the container
+    overlay.style.display = 'block'; // Show the overlay
+    videoModal.style.display = 'block'; // Show the modal
+    adVideo.muted = true;
+    adVideo.play().catch(error => {
+      console.error("Autoplay Error:", error);
+    });
+  });
+
+  closeButton.addEventListener('click', () => {
+    modalContainer.style.display = 'none'; // Hide the container
+    overlay.style.display = 'none'; // Hide the overlay
+    videoModal.style.display = 'none'; // Hide the modal
+    adVideo.pause();
+    adVideo.currentTime = 0;
+  });
+
+  // Close on overlay click
+  overlay.addEventListener('click', () => {
+    modalContainer.style.display = 'none'; // Hide the container
+    overlay.style.display = 'none'; // Hide the overlay
+    videoModal.style.display = 'none'; // Hide the modal
+    adVideo.pause();
+    adVideo.currentTime = 0;
+  });
+
+</script>
+</article>
+						<article id="work1">
 								<p><strong>Apply AI magic</strong></p>
 								<p>Big companies are building render farms to <b>create 2D and 3D images</b> and animations across industries. 
-								This technology available to everyone!</p>
+								So can you!</p>
 								<p>Find out how you can purchase images for online advertising personal/commercial use or <b>generate new images.</b></p>
 								<p>Use generative AI for imaginative elements, that do not exist in nature.</p>								
 								<p>Combine <b>photography</b> and use existing images to inspire something entirely new using Generative fill</p>
-								<p><strong> Need the impossible?</strong>
+								<p><strong>Need the impossible?</strong></p>		
 								<p>Generate image ideas for <b>packaging</b> and then bring them to life.</p>
 								<p>I'll know when and how attribution is required for commercial use</p>
 								<p>Learn about commercial use rights, attribution requirements, transformative use, and copyright considerations.</p>
+								<a href="#work2" style="text-decoration: underline;"><p>See more</p></a>
+								</article>		
+								
+							<article id="work2">
+								<h2 class="major">Web App Design</h2>
 								<span class="image main"><img src="images/pic01.png" alt="" /></span>
 								<p><strong>Need an online presence?</strong></p>
 								<p>I can create an online presence for projects and non-profit organisations. I provide comprehensive <b>branding</b>, <b>photography</b>, <b>mission statements</b>, <b>slogans</b>, and <b>online presence</b> strategies.</p>
@@ -92,6 +153,7 @@
 								<p>All solutions are compatible with Android, Apple, and mobile devices.</p>
 								<p>See <a href="https://cgma.org.za/" target="_blank">here</a> 🔗</p>								
 							</article>
+				
 
 						<!-- About -->
 							<article id="about">
@@ -395,6 +457,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright"><img src="images/favicon-16x16.png"> <a href="mailto:nadine@techie.com"> © nadine@techie.com</a>.</p>
+						<p style="font-size: 5px;">Video by <a href="https://pixabay.com/users/freecreativestuff-6346290/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=22908">Free Creative Stuff</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=22908">Pixabay</a></p>
 					</footer>
 
 			</div>
@@ -416,7 +479,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <div class="tm-video-wrapper">
 	<i id="tm-video-control-button" class="fas fa-pause"></i>
 	<video autoplay muted loop id="tm-video">
-		<source src="video/3868675-hd_1920_1080_25fps.mp4" type="video/mp4">
+		<source src="video/22908-331768732.mp4" type="video/mp4" style="height:max-content-content;">
 	</video>
 </div>
 
