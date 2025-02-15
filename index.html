@@ -60,12 +60,107 @@
 							<article id="intro">
 								<h2 class="major">What I Offer</h2>
 								<span class="image main"><img src="images/Intro (1).png" alt="Cick me" /></span>
+								<title>Simple Search Box</title>
+    <style>
+        .search-container {
+            position: relative; /* For positioning the dropdown */
+            display: inline-block; /* Or block, depending on desired layout */
+        }
+
+        .search-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px; /* Adjust as needed */
+            box-sizing: border-box; /* Include padding in width */
+            font-size: 16px;
+        }
+
+        .search-dropdown {
+            position: absolute;
+            top: 100%; /* Position below the input */
+            left: 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-top: none; /* Remove top border */
+            border-radius: 0 0 5px 5px; /* Round only the bottom corners */
+            background-color: white;
+            z-index: 1; /* Ensure it's on top */
+            max-height: 200px; /* Set a maximum height */
+            overflow-y: auto; /* Add scroll if needed */
+            display: none; /* Initially hidden */
+        }
+
+        .search-dropdown a { /* Style the dropdown items */
+            display: block; /* Make them stack vertically */
+            padding: 8px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .search-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-container">
+    <input type="text" class="search-box" placeholder="Search..." id="searchBox" autocomplete="off">
+    <div class="search-dropdown" id="searchDropdown">
+        <a href="#contact">SEO</a>
+        <a href="#work">Web Design</a>
+        <a href="#work2">Web Application Development</a>
+        <a href="#">Web Hosting</a>
+        <a href="#contact">Content Writing</a>
+        <a href="#service1">Branding</a>
+		<a href="#about">Form Creation</a>
+		<a href="#service2">Communication Tools</a>
+		<a href="#">Webhooks</a>
+		<a href="#work">Illustrations</a>
+		<a href="#work">Logos</a>
+        </div>
+</div>
+
+<script>
+    const searchBox = document.getElementById('searchBox');
+    const searchDropdown = document.getElementById('searchDropdown');
+
+    searchBox.addEventListener('input', function() {
+        const searchTerm = searchBox.value.toLowerCase();
+        const dropdownItems = searchDropdown.querySelectorAll('a');
+
+        searchDropdown.style.display = searchTerm.length > 0 ? 'block' : 'none'; // Show/hide dropdown
+
+        dropdownItems.forEach(item => {
+            const itemText = item.textContent.toLowerCase();
+            item.style.display = itemText.includes(searchTerm) ? 'block' : 'none';
+        });
+    });
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function(event) {
+        if (!event.target.closest('.search-container')) {
+            searchDropdown.style.display = 'none';
+        }
+    });
+
+    // Handle clicks on dropdown items 
+    searchDropdown.addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+            searchBox.value = event.target.textContent; 
+            searchDropdown.style.display = 'none'; 
+			 window.location.href = event.target.href;
+            event.preventDefault(); 
+        }
+    });
+
+</script>
 								<p><strong>SEO</strong></p>
 								<p><strong>Web Design</strong></p>
 								<p><strong>Web Application Development</strong></p>
 								<p><strong>Web Hosting</strong> (transfer and name reservations)</p>
 								<p><strong>Form Creation</strong> (application or chat design, logic testing and deployment)</p>
-								<p>Explore my <a href="#work"> work </a>ranging from pro bono projects (for NPOs) to paid service solutions.</p>
 							</article>
 
 						<!-- Work -->
@@ -128,7 +223,7 @@
 
 </script>
 </article>
-						<article id="work1">								
+						<article id="work1">	
 								<p><strong>Need the impossible?</strong></p>
 								<p style="white-space: pre-line;">Purchase images for online advertising personal/commercial use or <b>generate new images/videos.</b></p>
 								<p>Use generative AI for imaginative elements.</p>								
@@ -179,8 +274,12 @@
 								<p>Send me a message ↳</p>
 								<a href="http://wa.link/0icyqi" class="whatsapp-link" target="_blank">
 									<img src="images/icons8-whatsapp-48.png" id="myLogo" alt="WhatsApp Chat" style="float: right; height: 48px;">
-								  </a>					
+								  </a>			
+								  																	
+
 							</article>
+
+
 
 						<!-- Contact -->
 							<article id="contact">
@@ -213,6 +312,8 @@
 									<li><a href="https://za.linkedin.com/in/nadinevdh?trk=profile-badge" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
 								</ul>
 							</article>
+
+							
 
 						<!-- Elements -->
 							<article id="elements">
@@ -457,6 +558,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</article>
 
 					</div>
+
+					
+						  
 
 				<!-- Footer -->
 					<footer id="footer">
