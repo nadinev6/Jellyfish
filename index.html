@@ -88,7 +88,7 @@
     <input type="text" class="search-box" placeholder="Search..." id="searchBox" autocomplete="off">
     <div class="search-dropdown" id="searchDropdown">
         <a href="#contact">SEO</a>
-        <a href="#design">Web Design</a>
+        <a href="#web-design">Web Design</a>
         <a href="#work2">Web App Development</a>
         <a href="#hosting">Web Hosting</a>
 		<a href="#data">Web Analytics</a>
@@ -97,7 +97,7 @@
 		<a href="#about">Form Creation</a>
 		<a href="#service2">Communication Tools</a>
 		<a href="#service2">Webhooks</a>
-		<a href="#work">Illustrations</a>
+		<a href="#design">Illustrations</a>
 		<a href="#work">Logos</a>
 		<a href="#data">Data Visualisation</a>
 		<a href="#meeting">Meeting Companion</a>
@@ -171,7 +171,23 @@
 							</article>
 
 						<!-- Work -->
-							<article id="work">
+
+						<article id="work">
+							<h2>Select Type</h2>
+							<br><br><br>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<a href="#web-design"><button id="plain-button">Web Design</button></a>
+								<a href="#work2"><button id="plain-button">Web App Design</button></a>
+								<a href="#work2"><button id="plain-button">Web Development</button></a>
+							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+						</article>
+
+
+							<article id="web-design">
 								<h2 class="major">Web Design</h2>
 
 								<span class="image main">
@@ -293,14 +309,30 @@
 				
 
 						<!-- About -->
-							<article id="about">
-								<h2 class="major">Services</h2>
+
+						<article id="about">
+							<h2>Select Type</h2>
+							<br><br><br>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<a href="#form"><button id="plain-button">Forms</button></a>
+								<a href="#service1"><button id="plain-button">Branding</button></a>
+								<a href="#service2"><button id="plain-button">Communication</button></a>
+							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+						</article>
+
+							<article id="form">
+								<h2 class="major">Forms</h2>
 								<span class="image main"><img src="images/chat_form.jpg" alt="" /></span>
 								<p style="text-align: center;"><strong>Need a chatbot?</strong></p>
 								<p>I use third-party services to create forms in any format, <b>chat</b> or<b> traditional</b> form logic.</p>
 								<p>You have the option of paying a once-off fee for white-labelling (using your own branding) or advertised branding.</p>	
 								<p>Not sure if you need a chatbot, an FAQ page, or a chat button for offline communication? Start with an FAQ page. If a need arises, a basic chatbot can be trained using the questions from your FAQ.</p>
 								<p><a href="#service1" style="text-decoration:underline;">Branding</a></p>
+								<a href="#about"><i class="fas fa-step-backward"></i></a>
 							</article>
 							<article id="service1">
 								<p><img src="images/BIMI.png" style="max-height: 250px;"></p>
@@ -320,7 +352,7 @@
 								<a href="http://wa.link/0icyqi" class="whatsapp-link" target="_blank">
 									<img src="images/icons8-whatsapp-48.png" id="myLogo" alt="WhatsApp Chat" style="float: right; height: 48px;">
 								  </a>			
-								  <a href="#service1" style="text-align:left"><i class="fas fa-step-backward"></i></a>  																	
+								  <a href="#about" style="text-align:left"><i class="fas fa-step-backward"></i></a>  																	
 							</article>
 
 
@@ -771,7 +803,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			document.addEventListener('DOMContentLoaded', function() {
 				let video = document.getElementById('myVideo');
 				if (video) {
-					video.playbackRate = 0.01;
+					video.playbackRate = 0.02;
 	
 					let controlButton = document.getElementById('tm-video-control-button');
 					if (controlButton) {
