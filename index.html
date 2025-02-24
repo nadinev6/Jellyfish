@@ -256,6 +256,7 @@
 
 </article>
 
+
 <article id="photography">
 
 	<h2 class="major">Photography</h2>
@@ -739,7 +740,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright"><img src="images/favicon-16x16.png"> <a href="mailto:nadine@techie.com"> © nadine@techie.com</a>.</p>
-						<p style="font-size: 5px;">Video by <a href="https://pixabay.com/users/freecreativestuff-6346290/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=22908" target="_blank"></a>  <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=22908">Pixabay</a></p>
 					</footer>
 
 			</div>
@@ -759,10 +759,30 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 <!-- Background video -->
 <div class="tm-video-wrapper">
-	<i id="tm-video-control-button" class="fas fa-pause"></i>
-	<video autoplay muted loop id="tm-video">
-		<source src="video/22908-331768732.mp4" type="video/mp4" style="height:max-content-content;">
-	</video>
+	<i id="tm-video-control-button" class="fa fa-pause"></i>
+	 <!-- <video autoplay muted loop id="tm-video">
+		<source src="video/" type="video/mp4" style="height:max-content-content;">-->
+
+		<video autoplay muted loop id="tm-video" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" id="myVideo">
+			<source src="video/BG.mp4" type="video/mp4">
+		</video>
+	
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				let video = document.getElementById('myVideo');
+				if (video) {
+					video.playbackRate = 0.01;
+	
+					let controlButton = document.getElementById('tm-video-control-button');
+					if (controlButton) {
+						controlButton.addEventListener('click', function() {
+							video.currentTime = 0;
+							video.play();
+						});
+					}
+				}
+			});
+		</script>
 </div>
 
 <script src="js/jquery-3.4.1.min.js"></script>    
