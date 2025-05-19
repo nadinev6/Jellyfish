@@ -1738,18 +1738,15 @@ button:active,
   }
 }
 
-/* Hide the buttoms that extend */
+/* Override display flex on mobile */
 
-@media screen and (max-width: 480px) {
-  .hide-on-mobile {
-    display: none !important;
-  }
+.no-mobile-flex {
+  /* This will override display: flex on mobile */
 }
 
-/* For larger screens, we want to ensure the elements are visible if they have this class */
-@media screen and (min-width: 481px) {
-  .hide-on-mobile {
-    display: inline-block; 
+@media screen and (max-width: 480px) {
+  .no-mobile-flex {
+    display: block !important; /* Revert to block display on mobile */
   }
 }
 
