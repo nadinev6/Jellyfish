@@ -1717,22 +1717,39 @@ button:active,
 	  height: 2.25rem;
 	  background-size: 14px 14px;
 
-	  div[style*="display: flex; justify-content: space-between; align-items: center;"] {
-    flex-direction: column;
-    align-items: stretch; /* Make buttons take full width */
+	  /* Fixing the column display on mobile */
+
+ div[style*="display: flex; justify-content: space-between; align-items: center;"] {
+    display: block !important; /* Override the inline flex style */
   }
 
   div[style*="display: flex; justify-content: space-between; align-items: center;"] > a {
-    width: 100%; /* Make the anchor tags full width */
-    margin-bottom: 0.5em; /* Add some spacing between buttons */
+    display: block; /* Make the anchor tags stack */
+    width: 100%; /* Take full width */
+    margin-bottom: 0.5em; /* Add some spacing */
   }
 
   div[style*="display: flex; justify-content: space-between; align-items: center;"] > a:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last button */
+    margin-bottom: 0;
   }
 
   #plain-button {
-    width: 100%; /* Make the button itself full width */
+    width: 100%; /* Make the buttons full width */
+  }
+}
+
+/* Hide the buttoms that extend */
+
+@media screen and (max-width: 480px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* For larger screens, we want to ensure the elements are visible if they have this class */
+@media screen and (min-width: 481px) {
+  .hide-on-mobile {
+    display: inline-block; 
   }
 }
 
