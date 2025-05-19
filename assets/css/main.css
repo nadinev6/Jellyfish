@@ -1740,13 +1740,23 @@ button:active,
 
 /* Override display flex on mobile */
 
-.no-mobile-flex {
-  /* This will override display: flex on mobile */
-}
-
 @media screen and (max-width: 480px) {
   .no-mobile-flex {
     display: block !important; /* Revert to block display on mobile */
+  }
+
+  .no-mobile-flex > a {
+    display: block; /* Make the anchor tags stack */
+    width: 100%; /* Take full width */
+    margin-bottom: 0.5em; /* Add some spacing */
+  }
+
+  .no-mobile-flex > a:last-child {
+    margin-bottom: 0;
+  }
+
+  #plain-button {
+    width: 100%; /* Make the buttons full width */
   }
 }
 
