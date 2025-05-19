@@ -1760,6 +1760,19 @@ button:active,
   }
 }
 
+ #forms > table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevent text wrapping within cells */
+  }
+
+  #forms > table td,
+  #forms > table th {
+    white-space: nowrap; /* Also prevent wrapping in cells */
+    padding-right: 1em; /* Add some right padding for better readability */
+  }
+}
+
 /* Footer */
 
 	#footer {
