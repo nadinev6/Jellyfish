@@ -41,105 +41,30 @@
 								<h1><strong>CREATE ONLINE EXPERIENCES</strong></strong></h1>	
 								<p>Bring your vision to life, dynamically</p>
 								<title>Search Box</title>
-    <style>
-        .search-container {
-            position: relative; 
-            display: inline-block; /* Or inline-block */
-			width: 400px;
-        }
-
-        .search-box {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 250px; 
-            box-sizing: border-box; 
-            font-size: 16px;
-        }
-
-        .search-dropdown {
-            position: absolute;
-            top: 100%; /* Position below the input */
-            left: 0;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-top: none; 
-            border-radius: 0 0 5px 5px; /* round only bottom corners */
-            background-color: white;
-            z-index: 1; 
-            max-height: 200px; 
-            overflow-y: scroll; /* or auto */
-            display: none; /* Initially hidden */
-        }
-
-        .search-dropdown a { 
-            display: block; 
-            padding: 8px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .search-dropdown a:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
 </head>
 <body>
 
 <div class="search-container">
-    <input type="text" class="search-box" placeholder="Services..." id="searchBox" autocomplete="off">
-    <div class="search-dropdown" id="searchDropdown">
-        <a href="#contact">SEO</a>
-        <a href="#design">Web Design</a>
-        <a href="#development">Web App Development</a>
-        <a href="#hosting">Web Hosting</a>
-		<a href="#data">Web Analytics</a>
-        <a href="#contact">Content Writing</a>
-        <a href="#service1">Branding</a>
-		<a href="#about">Form Creation</a>
-		<a href="#service2">Communication Tools</a>
-		<a href="#service2">Webhooks</a>
-		<a href="#design">Illustrations</a>
-		<a href="#work">Logos</a>
-		<a href="#data">Data Visualisation</a>
-		<a href="#meeting">Meeting Companion</a>
-        </div>
+  <input type="text" class="search-box" placeholder="Services..." id="searchBox" autocomplete="off">
+  <div class="search-dropdown" id="searchDropdown" style="display: none;">
+    <a href="#contact">SEO</a>
+    <a href="#design">Web Design</a>
+    <a href="#development">Web App Development</a>
+    <a href="#hosting">Web Hosting</a>
+    <a href="#data">Web Analytics</a>
+    <a href="#contact">Content Writing</a>
+    <a href="#service1">Branding</a>
+    <a href="#about">Form Creation</a>
+    <a href="#service2">Communication Tools</a>
+    <a href="#service2">Webhooks</a>
+    <a href="#design">Illustrations</a>
+    <a href="#work">Logos</a>
+    <a href="#data">Data Visualisation</a>
+    <a href="#meeting">Meeting Companion</a>
+  </div>
 </div>
 
-<script>
-    const searchBox = document.getElementById('searchBox');
-    const searchDropdown = document.getElementById('searchDropdown');
-
-    searchBox.addEventListener('input', function() {
-        const searchTerm = searchBox.value.toLowerCase();
-        const dropdownItems = searchDropdown.querySelectorAll('a');
-
-        searchDropdown.style.display = searchTerm.length > 0 ? 'block' : 'none'; // Show/hide dropdown
-
-        dropdownItems.forEach(item => {
-            const itemText = item.textContent.toLowerCase();
-            item.style.display = itemText.includes(searchTerm) ? 'block' : 'none';
-        });
-    });
-
-    // Close the dropdown if the user clicks outside of it
-    window.addEventListener('click', function(event) {
-        if (!event.target.closest('.search-container')) {
-            searchDropdown.style.display = 'none';
-        }
-    });
-
-    // Handle clicks on dropdown items 
-    searchDropdown.addEventListener('click', function(event) {
-        if (event.target.tagName === 'A') {
-            searchBox.value = event.target.textContent; 
-            searchDropdown.style.display = 'none'; 
-			 window.location.href = event.target.href;
-            event.preventDefault(); 
-        }
-    });
-
-</script>
+<script src="assets/js/search.js"></script>
 <br>
 <br>
 </div>
